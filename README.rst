@@ -9,3 +9,9 @@ This repository is just going to contain a couple of stubs for various libraries
 Guidelines
 ^^^^^^^^^^
 These stubs use python 3.6+ syntax. That's all for now.
+
+Currently stubbed libraries
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- `discord.py`_ (WIP)
+
+.. _`discord.py`: https://github.com/Rapptz/discord.py
