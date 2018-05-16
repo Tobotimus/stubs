@@ -22,34 +22,34 @@ from .permissions import PermissionOverwrite, Permissions
 if TYPE_CHECKING:
     from .guild import Guild
 
-TransformerCallable = Callable[["AuditLogEntry", Any], Any]
-TransformerSpec = Tuple[Optional[str], Optional[TransformerCallable]]
+_TransformerCallable = Callable[["AuditLogEntry", Any], Any]
+_TransformerSpec = Tuple[Optional[str], Optional[_TransformerCallable]]
 
 try:
     from mypy_extensions import TypedDict
 except ImportError:
-    TransformersDict = Dict[str, TransformerSpec]
+    _TransformersDict = Dict[str, _TransformerSpec]
 else:
-    TransformersDict = TypedDict[
+    _TransformersDict = TypedDict[
         "TransfomersDict",
         {
-            "verification_level": TransformerSpec,
-            "explicit_content_filter": TransformerSpec,
-            "allow": TransformerSpec,
-            "deny": TransformerSpec,
-            "permissions": TransformerSpec,
-            "id": TransformerSpec,
-            "color": TransformerSpec,
-            "owner_id": TransformerSpec,
-            "inviter_id": TransformerSpec,
-            "channel_id": TransformerSpec,
-            "afk_channel_id": TransformerSpec,
-            "system_channel_id": TransformerSpec,
-            "widget_channel_id": TransformerSpec,
-            "permission_overwrites": TransformerSpec,
-            "splash_hash": TransformerSpec,
-            "icon_hash": TransformerSpec,
-            "avatar_hash": TransformerSpec,
+            "verification_level": _TransformerSpec,
+            "explicit_content_filter": _TransformerSpec,
+            "allow": _TransformerSpec,
+            "deny": _TransformerSpec,
+            "permissions": _TransformerSpec,
+            "id": _TransformerSpec,
+            "color": _TransformerSpec,
+            "owner_id": _TransformerSpec,
+            "inviter_id": _TransformerSpec,
+            "channel_id": _TransformerSpec,
+            "afk_channel_id": _TransformerSpec,
+            "system_channel_id": _TransformerSpec,
+            "widget_channel_id": _TransformerSpec,
+            "permission_overwrites": _TransformerSpec,
+            "splash_hash": _TransformerSpec,
+            "icon_hash": _TransformerSpec,
+            "avatar_hash": _TransformerSpec,
         },
     ]
 
@@ -58,7 +58,7 @@ class AuditLogDiff:
     def __iter__(self) -> Iterator[ItemsView[str, Any]]: ...
 
 class AuditLogChanges:
-    TRANSFORMERS: TransformersDict = ...
+    TRANSFORMERS: _TransformersDict = ...
     before: AuditLogDiff = ...
     after: AuditLogDiff = ...
     def __init__(self, entry: "AuditLogEntry", data: Any) -> None: ...

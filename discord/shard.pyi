@@ -5,7 +5,6 @@
 from .gateway import *
 from .client import Client
 from .enums import Status
-from .errors import ClientException, InvalidArgument
 from .state import AutoShardedConnectionState
 from typing import Any, Optional
 

@@ -5,7 +5,6 @@
 import datetime
 from typing import Type, Any, Optional, Union, List, Tuple, TYPE_CHECKING
 from .context_managers import Typing
-from .errors import ClientException, InvalidArgument
 from .file import File
 from .invite import Invite
 from .iterators import HistoryIterator
@@ -20,8 +19,8 @@ if TYPE_CHECKING:
     from .embeds import Embed
     from .message import Message
 
-Overwriteable = Union[Role, "Member"]
-Occurrence = Union["Message", datetime.datetime]
+_Overwriteable = Union[Role, "Member"]
+_Occurrence = Union["Message", datetime.datetime]
 
 class _Undefined: ...
 
@@ -55,14 +54,14 @@ class GuildChannel:
     def created_at(self) -> datetime.datetime: ...
     def overwrites_for(self, obj: Union[Role, User]) -> PermissionOverwrite: ...
     @property
-    def overwrites(self) -> List[Tuple[Overwriteable, PermissionOverwrite]]: ...
+    def overwrites(self) -> List[Tuple[_Overwriteable, PermissionOverwrite]]: ...
     @property
     def category(self) -> Optional["CategoryChannel"]: ...
     def permissions_for(self, member: "Member") -> Permissions: ...
     def delete(self, *, reason: Optional[str] = ...) -> None: ...
     def set_permissions(
         self,
-        target: Overwriteable,
+        target: _Overwriteable,
         *,
         overwrite: PermissionOverwrite = ...,
         reason: Optional[str] = ...,
@@ -99,9 +98,9 @@ class Messageable:
         self,
         *,
         limit: int = ...,
-        before: Optional[Occurrence] = ...,
-        after: Optional[Occurrence] = ...,
-        around: Optional[Occurrence] = ...,
+        before: Optional[_Occurrence] = ...,
+        after: Optional[_Occurrence] = ...,
+        around: Optional[_Occurrence] = ...,
         reverse: Optional[bool] = ...
     ) -> HistoryIterator: ...
 

@@ -4,7 +4,6 @@
 
 import discord.abc
 from .enums import DefaultAvatar, RelationshipType, UserFlags
-from .errors import ClientException, InvalidArgument
 from typing import Any, Optional
 
 VALID_STATIC_FORMATS: Any

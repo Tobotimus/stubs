@@ -11,7 +11,6 @@ from .enums import (
     VerificationLevel,
     VoiceRegion,
 )
-from .errors import ClientException, InvalidArgument
 from .invite import Invite
 from .iterators import AuditLogIterator
 from .member import Member, VoiceState

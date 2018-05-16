@@ -5,7 +5,6 @@
 import discord
 from .context import Context
 from .core import Command, GroupMixin
-from .errors import CommandError, CommandNotFound
 from .formatter import HelpFormatter
 from .view import StringView
 from typing import Any, Optional

@@ -4,7 +4,6 @@
 
 from .gateway import *
 from .backoff import ExponentialBackoff
-from .errors import ClientException, ConnectionClosed
 from .player import AudioPlayer, AudioSource
 from typing import Any, Optional
 
