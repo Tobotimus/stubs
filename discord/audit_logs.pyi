@@ -4,7 +4,16 @@
 
 # TODO: Update from documentation rather than source
 
-from typing import Any, Optional, Callable, Dict, Tuple, Iterator, ItemsView, TYPE_CHECKING
+from typing import (
+    Any,
+    Optional,
+    Callable,
+    Dict,
+    Tuple,
+    Iterator,
+    ItemsView,
+    TYPE_CHECKING,
+)
 from .colour import Colour
 from .invite import Invite
 from .object import Object
@@ -21,7 +30,28 @@ try:
 except ImportError:
     TransformersDict = Dict[str, TransformerSpec]
 else:
-    TransformersDict = TypedDict["TransfomersDict", {"verification_level": TransformerSpec, "explicit_content_filter": TransformerSpec, 'allow': TransformerSpec, 'deny': TransformerSpec, 'permissions': TransformerSpec, 'id': TransformerSpec, 'color': TransformerSpec, 'owner_id': TransformerSpec, 'inviter_id': TransformerSpec, 'channel_id': TransformerSpec, 'afk_channel_id': TransformerSpec, 'system_channel_id': TransformerSpec, 'widget_channel_id': TransformerSpec, 'permission_overwrites': TransformerSpec, 'splash_hash': TransformerSpec, 'icon_hash': TransformerSpec, 'avatar_hash': TransformerSpec}]
+    TransformersDict = TypedDict[
+        "TransfomersDict",
+        {
+            "verification_level": TransformerSpec,
+            "explicit_content_filter": TransformerSpec,
+            "allow": TransformerSpec,
+            "deny": TransformerSpec,
+            "permissions": TransformerSpec,
+            "id": TransformerSpec,
+            "color": TransformerSpec,
+            "owner_id": TransformerSpec,
+            "inviter_id": TransformerSpec,
+            "channel_id": TransformerSpec,
+            "afk_channel_id": TransformerSpec,
+            "system_channel_id": TransformerSpec,
+            "widget_channel_id": TransformerSpec,
+            "permission_overwrites": TransformerSpec,
+            "splash_hash": TransformerSpec,
+            "icon_hash": TransformerSpec,
+            "avatar_hash": TransformerSpec,
+        },
+    ]
 
 class AuditLogDiff:
     def __len__(self) -> int: ...

@@ -4,7 +4,6 @@
 
 from .mixins import Hashable
 from .object import Object
-from .utils import parse_time
 from typing import Any, Optional
 
 class Invite(Hashable):

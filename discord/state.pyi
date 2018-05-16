@@ -9,7 +9,7 @@ from .activity import _ActivityTag
 from .calls import GroupCall
 from .embeds import Embed
 from .emoji import Emoji, PartialEmoji
-from .enums import ChannelType, Status, try_enum
+from .enums import ChannelType, Status
 from .guild import Guild
 from .member import Member
 from .message import Message
@@ -22,10 +22,10 @@ from typing import Any
 class ListenerType(enum.Enum):
     chunk: int = ...
 
-Listener = namedtuple('Listener', ['type', 'future', 'predicate'])
+Listener = namedtuple("Listener", ["type", "future", "predicate"])
 log: Any
 
-ReadyState = namedtuple('ReadyState', ['launch', 'guilds'])
+ReadyState = namedtuple("ReadyState", ["launch", "guilds"])
 
 class ConnectionState:
     loop: Any = ...
@@ -37,10 +37,20 @@ class ConnectionState:
     is_bot: Any = ...
     shard_count: Any = ...
     heartbeat_timeout: Any = ...
-    def __init__(self, dispatch: Any, chunker: Any, syncer: Any, http: Any, loop: Any, **options: Any) -> None: ...
+    def __init__(
+        self,
+        dispatch: Any,
+        chunker: Any,
+        syncer: Any,
+        http: Any,
+        loop: Any,
+        **options: Any
+    ) -> None: ...
     user: Any = ...
     def clear(self) -> None: ...
-    def process_listeners(self, listener_type: Any, argument: Any, result: Any) -> None: ...
+    def process_listeners(
+        self, listener_type: Any, argument: Any, result: Any
+    ) -> None: ...
     @property
     def self_id(self): ...
     @property

@@ -5,7 +5,7 @@
 from .calls import CallMessage
 from .embeds import Embed
 from .emoji import Emoji, PartialEmoji
-from .enums import MessageType, try_enum
+from .enums import MessageType
 from .errors import ClientException, HTTPException, InvalidArgument, NotFound
 from .reaction import Reaction
 from typing import Any

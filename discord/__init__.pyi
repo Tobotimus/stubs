@@ -35,7 +35,7 @@ __title__: str
 __license__: str
 __copyright__: str
 
-VersionInfo = namedtuple('VersionInfo', 'major minor micro releaselevel serial')
+VersionInfo = namedtuple("VersionInfo", "major minor micro releaselevel serial")
 version_info: VersionInfo
 
 class NullHandler(logging.Handler):

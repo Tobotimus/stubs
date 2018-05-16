@@ -14,11 +14,17 @@ except ImportError:
     AssetsDict = Dict[str, str]
     PartyDict = Dict[str, Union[int, List[int]]]
 else:
-    TimeStampsDict = TypedDict("TimeStampsDict", {"start": int, "end": int}, total=False)
-    AssetsDict = TypedDict("AssetsDict", {"large_image": str, "large_text": str, "small_image": str, "small_text": str}, total=False)
+    TimeStampsDict = TypedDict(
+        "TimeStampsDict", {"start": int, "end": int}, total=False
+    )
+    AssetsDict = TypedDict(
+        "AssetsDict",
+        {"large_image": str, "large_text": str, "small_image": str, "small_text": str},
+        total=False,
+    )
     PartyDict = TypedDict("PartyDict", {"id": int, "size": List[int]}, total=False)
 
-__all__ = ('Activity', 'Streaming', 'Game', 'Spotify')
+__all__ = ("Activity", "Streaming", "Game", "Spotify")
 
 class _ActivityTag: ...
 
@@ -91,7 +97,7 @@ class Spotify:
     @property
     def name(self) -> str: ...
     def __eq__(self, other: Any) -> bool: ...
-    def __ne__(self, other: Any): -> bool ...
+    def __ne__(self, other: Any) -> bool: ...
     def __hash__(self) -> int: ...
     @property
     def title(self) -> str: ...

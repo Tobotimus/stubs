@@ -6,7 +6,6 @@ from .colour import Colour
 from .errors import InvalidArgument
 from .mixins import Hashable
 from .permissions import Permissions
-from .utils import snowflake_time
 from typing import Any, Optional
 
 class Role(Hashable):
