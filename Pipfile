@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 mypy = "*"
+mypy-extensions = "*"
 
 [dev-packages]
 black = {git = "https://github.com/ambv/black"}
