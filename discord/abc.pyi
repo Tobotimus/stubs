@@ -1,14 +1,13 @@
 import datetime
 from abc import ABCMeta, abstractmethod
 from collections import namedtuple
-from typing import Type, Any, Optional, Union, List, Tuple
+from typing import Type, Any, Optional, Union, List, Tuple, AsyncIterator
 from .channel import CategoryChannel
 from .context_managers import Typing
 from .embeds import Embed
 from .file import File
 from .guild import Guild
 from .invite import Invite
-from .iterators import HistoryIterator
 from .member import Member
 from .message import Message
 from .permissions import PermissionOverwrite, Permissions
@@ -103,7 +102,7 @@ class Messageable(metaclass=ABCMeta):
         after: Optional[_Occurrence] = ...,
         around: Optional[_Occurrence] = ...,
         reverse: Optional[bool] = ...
-    ) -> HistoryIterator: ...
+    ) -> AsyncIterator[Message]: ...
 
 class Connectable(metaclass=ABCMeta):
     async def connect(self, *, timeout: float = ..., reconnect: bool = ...) -> VoiceClient: ...
